@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(title: "...", body: "...")
+    @article = Article.new(title: '...', body: '...')
 
     if @article.save
       redirect_to @article
@@ -41,9 +41,10 @@ class ArticlesController < ApplicationController
 
     redirect_to root_path
   end
-  
+
   private
-    def article_params
-      params.require(:article).permit(:title, :body)
-    end
+
+  def article_params
+    params.require(:article).permit(:title, :body)
+  end
 end
