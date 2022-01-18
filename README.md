@@ -1,24 +1,59 @@
-# README
+#  Blog App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I will create a fully functional blog app website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+* Ruby on Rails
+* Rspec
+* Psql
 
-* System dependencies
+## Getting Started
 
-* Configuration
+### Prerequisites
 
-* Database creation
+* Ruby (ruby --v)
+* SQLite3 (sqlite3 --v)
+* Postgrestsql (psql --version)
+* Node.js (node --v)
+* Yarn (yarn --v)
 
-* Database initialization
+To get a local copy up and running follow these simple example steps.
 
-* How to run the test suite
+Run in your terminal `git clone git@github.com:Mhdez221993/blog_app.git`
 
-* Services (job queues, cache servers, search engines, etc.)
+### Install RSpec
 
-* Deployment instructions
+To run the tests locally :
 
-* ...
+* To instal RSpec for testing please run the following command on your terminal:
+
+ ` gem install rspec`
+
+### Helpful links to solve some issues
+
+* [Could not find gem](https://stackoverflow.com/questions/32491201/could-not-find-gem-pg-0-12-4-ruby-in-any-of-the-gem-sources-listed-in-your)
+* [Install psql](https://harshityadav95.medium.com/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3)
+
+## Authors
+
+👤 **Moises Hernandez Coronado**
+
+* GitHub: [@Mhdez221993](https://github.com/Mhdez221993)
+* Twitter: [@MoisesH42060050](https://twitter.com/MoisesH42060050)
+* LinkedIn: [Moises Hernandez Coronado](https://www.linkedin.com/in/moises-hernandez-9bbb17145/)
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Mhdez221993/blog_app/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+* To my coding partner who helped me through all the work
+* To my Stand Up Team who kept my morale up!
