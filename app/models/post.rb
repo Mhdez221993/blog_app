@@ -1,10 +1,10 @@
 class Post < ApplicationRecord
-  belongs_to :user
-  has_many :likes, dependent: :destroy
-  has_many :comments, dependent: :destroy
+  belongs_to :user, class_name: 'User', foreign_key: 'user_id'
+  has_many :likes, foreign_key: 'post_id'
+  has_many :comments, foreign_key: 'post_id'
 
-  def post_counter_for_user(id)
-    Post.find(id).user.posts_counter += 1
+  def post_counter_for_user(user)
+    user.increment!(:posts_counter)
   end
 
   def five_recent_comments()
