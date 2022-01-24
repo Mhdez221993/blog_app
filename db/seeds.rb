@@ -3,5 +3,7 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+(1..10).each do |i|
+  User.create([{ name: "name#{i}", photo: "Photo#{i}", bio: "Bio#{i}" }])
+end
 #   Character.create(name: "Luke", movie: movies.first)
