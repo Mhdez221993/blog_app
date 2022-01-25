@@ -7,7 +7,8 @@ body {
   padding-bottom: 40px;
 }
 
-ul {
+ul,
+li {
   padding: 0;
   list-style: none;
 }
@@ -94,4 +95,11 @@ img {
 
 .comments_index {
   padding: 10px 0 50px 0;
+}
+
+/** Common show **/
+.post_show_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
