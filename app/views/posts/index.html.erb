@@ -1,10 +1,9 @@
-<h1>posts#index</h1>
-<ul>
-  <li>User name <span>number of posts</span></li>
-  <li>
-    <h2>Bio</h2>
-    <p>Lorem ipsum amet</p>
-  </li>
-  <li>Post 1</li>
-  <li>Comments</li>
-</ul>
+<div>
+  <%= render 'users/user', user: @post.user %>
+  <ul>
+    <%@post.user.posts.each do |post| %>
+      <%= render 'users/post', post: post %>
+      <%= render 'comment', comments: post.comments %>
+    <% end %>
+  </ul>
+</div>

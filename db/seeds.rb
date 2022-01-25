@@ -9,6 +9,10 @@
   user = User.last
   (1..5).each do |i|
     user.posts.create(title: "Post ##{i}", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum, odio ac interdum pharetra...")
+    post = Post.last
+    (1..10).each do |i|
+      Comment.create(user_id: user.id, post_id: post.id, text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+    end
   end
 end
 #   Character.create(name: "Luke", movie: movies.first)
