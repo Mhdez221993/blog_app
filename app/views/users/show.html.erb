@@ -3,7 +3,12 @@
   <h2  class="bio"><span>Bio</span><br/>
     <%=@user.bio%>
   </h2>
-  <% @user.posts.each do |post| %>
-    <%= render 'post', post: post %>
-  <%end%>
+  <ul>
+    <% @user.posts.each do |post| %>
+      <%= render 'post', post: post %>
+    <%end%>
+  </ul>
+  <div class="see_all_post">
+    <button type="button" class="btn btn-secondary">See all posts</button>
+  </div>
 </div>

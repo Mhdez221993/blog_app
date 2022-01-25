@@ -4,6 +4,7 @@
 /** common **/
 body {
   padding-top: 100px;
+  padding-bottom: 40px;
 }
 
 ul {
@@ -77,5 +78,14 @@ img {
 
 .user_posts {
   border: 1px solid rgb(230, 229, 229);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.see_all_post {
+  text-align: center;
+}
+
+.btn_show_post {
   padding: 10px;
 }
