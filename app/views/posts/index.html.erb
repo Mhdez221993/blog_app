@@ -6,4 +6,6 @@
       <%= render 'comment', comments: post.comments %>
     <% end %>
   </ul>
-</div>
+  <div class="see_all_post">
+    <button type="button" class="btn btn-secondary"><%= link_to "Pagination", user_post_path(id: @post.id) %></button>
+  </div>
