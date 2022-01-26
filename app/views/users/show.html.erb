@@ -1,12 +1,10 @@
 <div class="user_show">
-  <%= render 'user', user: @user %>
+  <%= render @user %>
   <h2  class="bio"><span>Bio</span><br/>
     <%=@user.bio%>
   </h2>
   <ul>
-    <% @user.posts.each do |post| %>
-      <%= render 'post', post: post %>
-    <%end%>
+    <%= render @user.posts %>
   </ul>
   <div class="see_all_post">
     <button type="button" class="btn btn-secondary"><%= link_to "See all posts", user_posts_path(@user.id) %></button>
