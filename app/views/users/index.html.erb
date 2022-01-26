@@ -1,5 +1,3 @@
 <ul class="users_home">
-  <%@users.each do |user| %>
-    <%= render 'user', user: user %>
-  <%end%>
+  <%= render @users %>
 </ul>
