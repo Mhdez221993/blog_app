@@ -1,8 +1,5 @@
-<h1>users#index</h1>
-
-<ul>
-  <li>User name <span>number of posts</span></li>
-  <li>User name <span>number of posts</span></li>
-  <li>User name <span>number of posts</span></li>
-  <li>User name <span>number of posts</span></li>
+<ul class="users_home">
+  <%@users.each do |user| %>
+    <%= render 'user', user: user %>
+  <%end%>
 </ul>

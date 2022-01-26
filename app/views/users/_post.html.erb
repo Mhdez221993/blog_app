@@ -1,0 +1,10 @@
+  
+<li class="user_posts">
+  <h2><%= post.title %></h2>
+  <br>
+  <p><%= post.text %></p>
+  <h3>
+    comments: <%= post.comments_counter == nil ? 0 : post.comments_counter %>,
+    Likes: <%= post.likes_counter == nil ? 0 : post.likes_counter %>
+  </h3>
+</li>
