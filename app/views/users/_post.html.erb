@@ -1,6 +1,5 @@
-  
 <li class="user_posts">
-  <h2><%= post.title %></h2>
+  <%= link_to post.title, user_post_path(id: post.id) %>
   <br>
   <p><%= post.text %></p>
   <h3>

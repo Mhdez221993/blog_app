@@ -1,4 +1,13 @@
 <div class="post_show">
   <%= render 'post', post: @post %>
   <%= render 'comment', comments: @post.comments%>
+  <h2>Add a comment:</h2>
+  <%= form_with model: [ @post, @post.comments.build ] do |form| %>
+    <p>
+      <%= form.text_field :text %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
 </div>

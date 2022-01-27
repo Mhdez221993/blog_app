@@ -7,6 +7,10 @@ class Post < ApplicationRecord
     user.increment!(:posts_counter)
   end
 
+  def like(user)
+    likes << Like.new(user_id: user)
+  end
+
   def five_recent_comments()
     Post.comments.limit(5)
   end
