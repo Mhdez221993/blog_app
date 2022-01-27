@@ -4,7 +4,7 @@
 # Examples:
 #
 (1..5).each do |i|
-  User.create( name: "Hdez #{i}", photo: "https://cdn.learnenough.com/rails.svg", bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum, odio ac interdum pharetra, velit elit dictum dui, sit amet fringilla dolor leo id justo. Suspendisse dapibus imperdiet eros non sodales. Nunc est odio, rhoncus et sodales in, mollis in lacus.", posts_counter: 0)
+  User.create( name: "Hdez #{i}", photo: "https://i.ytimg.com/vi/IvY_Hv90iOQ/hqdefault.jpg", bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum, odio ac interdum pharetra, velit elit dictum dui, sit amet fringilla dolor leo id justo. Suspendisse dapibus imperdiet eros non sodales. Nunc est odio, rhoncus et sodales in, mollis in lacus.", posts_counter: 0)
 
   user = User.last
   (1..5).each do |i|
