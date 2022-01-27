@@ -39,6 +39,7 @@ To run the tests locally :
 - [Set up ruby, rils, node, postgresql](https://linoxide.com/how-to-install-ruby-on-rails-on-ubuntu-20-04/#:~:text=Rails%20can%20be%20installed%20using%20the%20gem%20install,Rails%20on%20ubuntu%2020.04.%20%24%20gem%20install%20rails)
 
 * [Revertin a commit](https://www.w3docs.com/snippets/git/how-to-revert-a-git-repository-to-a-previous-commit.html)
+* [Why Bundle Install is installing gems in vendor/bundle?](https://stackoverflow.com/questions/19961821/why-bundle-install-is-installing-gems-in-vendor-bundle)
 
 ## Authors
 
