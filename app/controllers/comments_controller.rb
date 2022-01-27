@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
   before_action :current_user
 
+  def new
+    @comment = Comment.new
+  end
+
   def create
     @post = Post.find(params[:post_id])
     @user = @post.user
