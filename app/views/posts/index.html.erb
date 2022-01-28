@@ -3,7 +3,7 @@
   <ul>
     <%@posts.each do |post| %>
       <%= render 'users/post', post: post %>
-      <%= render 'comment', comments: post.comments %>
+      <%= render 'comment', comments: post.comments.includes(:user) %>
     <% end %>
   </ul>
   <div class="see_all_post">
