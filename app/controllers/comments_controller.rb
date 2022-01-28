@@ -7,14 +7,13 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @user = @post.user
-    @comment = @post.comments.new(user_id: @user.id, text: commnet_params[:text])
+    @comment = @post.comments.new(user_id: current_user.id, text: commnet_params[:text])
     if @comment.save
       flash[:notice] = 'Comment added'
     else
       flash[:alert] = 'Failed to add a comment'
     end
-    redirect_to user_post_path(@user.id, @post.id)
+    redirect_to user_post_path(current_user, @post)
   end
 
   # private
