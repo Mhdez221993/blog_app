@@ -1,8 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it 'eager loads all files without errors' do
-    expect { Rails.application.eager_load! }.not_to raise_error
+  let(:params) { { name: 'John', posts_counter: 0 } }
+  before(:each) do
+    User.create(params)
+    User.create(params)
+    User.create(params)
   end
 
   it 'is valid with valid attributes' do
@@ -28,5 +31,9 @@ RSpec.describe User, type: :model do
   it 'is valid name is not black' do
     user = User.new(name: '', bio: 'Jons Bio', posts_counter: 2)
     expect(user).to be_invalid
+  end
+
+  it 'Shoud return all active records' do
+    expect(User.count).to eq(3)
   end
 end
