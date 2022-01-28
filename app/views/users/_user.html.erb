@@ -1,7 +1,7 @@
 <li class="user_home">
   <img class="picture" src=<%=user.photo%>>
   <div class="content">
-    <%= user.name %>
+    <%= link_to user.name, user_path(user) %>
     <%= link_to 'New post', new_post_path, class: 'new_post' %>
     <h3> Posts <%= user.posts_counter %></h3>
   </div>
