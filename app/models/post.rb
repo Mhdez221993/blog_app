@@ -3,10 +3,10 @@ class Post < ApplicationRecord
   has_many :likes, foreign_key: 'post_id'
   has_many :comments, foreign_key: 'post_id'
 
-  validates :title, presence: true
-  validates :text, length: { maximum: 250, minimum: 2 }, presence: true
-  validates :comments_counter, comparison: { greater_than_or_equal_to: 0 }, presence: true
-  validates :likes_counter, comparison: { greater_than_or_equal_to: 0 }, presence: true
+  validates :title, length: { maximum: 250, minimum: 2 }, presence: true
+  validates :text, presence: true
+  validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def post_counter_for_user(user)
     user.increment!(:posts_counter)
