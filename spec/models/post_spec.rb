@@ -5,10 +5,6 @@ RSpec.describe Post, type: :model do
     @user = User.create(name: 'John', bio: 'Jons Bio', posts_counter: 0)
   end
 
-  it 'eager loads all files without errors' do
-    expect { Rails.application.eager_load! }.not_to raise_error
-  end
-
   it 'is valid with valid attributes' do
     post = @user.posts.new(title: 'Lord', text: 'Best', comments_counter: 0, likes_counter: 0)
     expect(post).to be_valid
