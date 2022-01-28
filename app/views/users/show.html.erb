@@ -4,7 +4,7 @@
     <%= @user.bio %>
   </h2>
   <ul>
-    <%= render @user.posts %>
+    <%= render @user.posts.includes(:user) %>
   </ul>
   <div class="see_all_post">
     <button type="button" class="btn btn-secondary"><%= link_to "See all posts", user_posts_path(@user.id) %></button>
