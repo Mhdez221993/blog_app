@@ -1,5 +1,5 @@
 <li class="comments_index">
-  <%comments.each do |comment| %>
+  <%comments.includes(:user).each do |comment| %>
     <div class="comment_spacer">
       <span>Name: <%= comment.user.name %></span>
       <span>Comment: <%= comment.text %></span>

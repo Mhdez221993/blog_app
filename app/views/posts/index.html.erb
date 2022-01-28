@@ -1,9 +1,9 @@
 <div>
   <%= render 'users/user', user: @posts.first.user %>
   <ul>
-    <%@posts.each do |post| %>
-      <%= render 'users/post', post: post %>
-      <%= render 'comment', comments: post.comments.includes(:user) %>
+    <% @posts.includes(:user).each do |post| %>
+      <%= render 'post', post: post %>
+      <%= render 'comment', comments: post.comments %>
     <% end %>
   </ul>
   <div class="see_all_post">
