@@ -2,8 +2,8 @@
   <div class="post_show_title">
     <h2><%= post.title %> by <%= post.user.name %></h2>
     <h3>
-      comments: <%= post.comments_counter || 0 %>,
-      <%= render 'likes/like', post: post %> : <%= post.likes.count || 0 %>
+      comments: <%= post.comments_counter %>,
+      <%= render 'likes/like', post: post %> : <%= post.likes_counter %>
     </h3>
   </div>
   <br>
