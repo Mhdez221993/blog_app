@@ -1,8 +1,7 @@
 <li class="user_home">
-  <img class="picture" src=<%=user.photo%>>
+  <%= gravatar_for user %>
   <div class="content">
     <%= link_to user.name, user_path(user) %>
-    <%= link_to 'New post', new_post_path, class: 'new_post' %>
-    <h3> Posts <%= user.posts_counter %></h3>
+    <h2 class="text-left"> Posts <%= user.posts_counter %></h2>
   </div>
 </li>

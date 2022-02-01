@@ -1,5 +1,5 @@
 <div>
-  <%= render 'users/user', user: @posts.first.user %>
+  <%= render 'users/user', user: current_user %>
   <ul>
     <% @posts.includes(:user).each do |post| %>
       <%= render 'post', post: post %>
@@ -7,6 +7,6 @@
     <% end %>
   </ul>
   <div class="see_all_post">
-    <button type="button" class="btn btn-secondary"><%= link_to "Pagination", user_post_path(id: @posts.first.id)%></button>
-  </div>
+    <%# <button type="button" class="btn btn-secondary"><%= link_to "Pagination", user_post_path(id: current_user.id)%></button> %>
+</div>
 </div>
