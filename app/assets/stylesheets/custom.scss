@@ -3,25 +3,6 @@
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
-
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 /* universal */
 
 body {
@@ -68,7 +49,6 @@ h2 {
   font-size: 1.5em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  // text-align: center;
   font-weight: normal;
   color: $gray-light;
 }
@@ -89,10 +69,11 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
+}
+
+#logo:hover {
+  color: white;
+  text-decoration: none;
 }
 
 /** User**/
@@ -123,14 +104,8 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
+  border-top: 1px solid #eaeaea;
   color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
-  }
   small {
     float: left;
   }
@@ -153,10 +128,6 @@ aside {
   section {
     padding: 10px 0;
     margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
     span {
       display: block;
       margin-bottom: 3px;
@@ -190,7 +161,6 @@ select,
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
-  @include box_sizing;
 }
 
 input {
@@ -202,13 +172,6 @@ input {
   ul {
     color: red;
     margin: 0 0 30px 0;
-  }
-}
-
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
   }
 }
 
