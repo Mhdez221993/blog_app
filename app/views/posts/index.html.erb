@@ -6,7 +6,7 @@
       <%= render 'comment', comments: post.comments %>
     <% end %>
   </ul>
-  <div class="see_all_post text-center">
-    <%= link_to "Pagination" %>
-  </div>
+</div>
+<div class="see_all_post text-center pagination-link">
+  <%== pagy_nav(@pagy) %>
 </div>

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = current_user.posts
+    @pagy, @posts = pagy(current_user.posts)
   end
 
   def show
