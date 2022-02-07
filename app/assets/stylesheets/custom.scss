@@ -179,3 +179,15 @@ input {
   color: $gray-light;
   padding: 15px 12px;
 }
+
+.success {
+  background-color: rgb(130, 246, 145);
+}
+
+.notice {
+  background-color: rgb(208, 236, 115);
+}
+
+.alert {
+  background-color: rgb(238, 134, 134);
+}
