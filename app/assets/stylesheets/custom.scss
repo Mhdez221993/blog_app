@@ -2,6 +2,7 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
+
 $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
@@ -22,27 +23,34 @@ $gray-medium-light: #eaeaea;
 }
 
 /* universal */
+
 body {
   padding-top: 60px;
 }
+
 ul,
 li {
   list-style: none;
   padding: 0;
 }
+
 section {
   overflow: auto;
 }
+
 textarea {
   resize: vertical;
 }
+
 .center {
   text-align: center;
   h1 {
     margin-bottom: 10px;
   }
 }
+
 /* typography */
+
 h1,
 h2,
 h3,
@@ -51,9 +59,11 @@ h5,
 h6 {
   line-height: 1;
 }
+
 h1 {
   font-size: 3em;
 }
+
 h2 {
   font-size: 1.5em;
   letter-spacing: -1px;
@@ -62,12 +72,14 @@ h2 {
   font-weight: normal;
   color: $gray-light;
 }
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
 
 /* header */
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -84,6 +96,7 @@ p {
 }
 
 /** User**/
+
 .users {
   display: flex;
   flex-direction: column;
@@ -106,6 +119,7 @@ p {
 }
 
 /* footer */
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -131,6 +145,7 @@ footer {
 }
 
 /* sidebar */
+
 aside {
   section.user_info {
     margin-top: 20px;
@@ -167,6 +182,7 @@ aside {
 }
 
 /* forms */
+
 input,
 textarea,
 select,
@@ -176,6 +192,7 @@ select,
   margin-bottom: 15px;
   @include box_sizing;
 }
+
 input {
   height: auto !important;
 }
@@ -187,6 +204,7 @@ input {
     margin: 0 0 30px 0;
   }
 }
+
 .field_with_errors {
   @extend .has-error;
   .form-control {
