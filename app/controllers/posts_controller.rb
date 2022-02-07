@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find_by(id: params[:user_id])
-    posts = @user.posts.limit(3).order('created_at DESC')
-    @pagy, @posts = pagy(posts)
+    @pagy, @posts = pagy(@user.posts, items: 2)
   end
 
   def show
