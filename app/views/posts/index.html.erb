@@ -2,8 +2,8 @@
   <%= render 'users/user', user: current_user, fron_user_index: true %>
   <ul>
     <% @posts.includes(:user).each do |post| %>
-      <%= render 'post', post: post %>
-      <%= render 'comment', comments: post.comments %>
+      <%= render 'post', post: post, post_index: true %>
+      <%= render 'comment', comments: post.recent_comments %>
     <% end %>
   </ul>
 </div>

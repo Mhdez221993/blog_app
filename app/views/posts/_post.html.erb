@@ -1,11 +1,25 @@
-<li class="user_posts">
-  <div class="post_show_title">
-    <h2><%= post.title %> by <%= post.user.name %></h2>
-    <h3>
-      comments: <%= post.comments_counter %>,
-      <%= render 'likes/like', post: post %> : <%= post.likes_counter %>
-    </h3>
-  </div>
-  <br>
-  <p><%= post.text %></p>
-</li>
+<% if post_index %>
+  <li class="user_posts">
+    <div class="post_show_title">
+      <h2><%= link_to post.title, user_post_path(post.user, post) %> by <%= link_to post.user.name, user_path(post.user) %></h2>
+      <h3>
+        <%= pluralize post.comments_counter, 'Comment' %>,
+        <%= pluralize post.likes_counter, 'Like' %>
+      </h3>
+    </div>
+    <br>
+    <p><%= post.text %></p>
+  </li>
+<%elsif%>
+  <li class="user_posts">
+    <div class="post_show_title">
+      <h2><%= post.title %> by <%= link_to post.user.name, user_path(post.user) %></h2>
+      <h3>
+        <%= pluralize post.comments_counter, 'Comment' %>,
+        <%= pluralize post.likes_counter, 'Like' %>
+      </h3>
+    </div>
+    <br>
+    <p><%= post.text %></p>
+  </li>
+<%end%>

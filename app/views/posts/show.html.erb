@@ -1,10 +1,10 @@
 <div class="post_show">
-  <%= render 'post', post: @post %>
-  <%= render 'comment', comments: @post.comments.includes(:user) %>
+  <%= render 'post', post: @post, post_index: false %>
+  <%= render 'comment', comments: @post.recent_comments.includes(:user) %>
   <h2>Add a comment:</h2>
   <%= form_with model: [ @post, @post.comments.build ] do |form| %>
     <p>
-      <%= form.text_field :text %>
+      <%= form.text_area :text %>
     </p>
     <p>
       <%= form.submit class: "btn btn-primary" %>
