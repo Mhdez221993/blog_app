@@ -8,7 +8,7 @@ gem 'bullet'
 gem 'devise'
 gem 'importmap-rails'
 gem 'jbuilder'
-gem 'pagy', '~> 5.10'
+gem 'jquery-rails'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.1'
@@ -34,3 +34,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'pagy', '~> 5.10'
