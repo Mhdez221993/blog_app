@@ -1,8 +1,17 @@
-<li class="user_home">
-  <%= gravatar_for user %>
-  <div class="content">
-    <%= link_to user.name, user_path(user) %>
-    <p class="text-left"> <%= user.bio %></p>
-    <h2 class="post-counter"> <%= pluralize user.posts_counter, 'Post' %></h2>
-  </div>
-</li>
+<% if fron_user_index %>
+  <li class="user_home">
+    <%= gravatar_for user %>
+    <div class="content">
+      <%= link_to user.name, user_path(user) %>
+      <h2 class="post-counter"> <%= pluralize user.posts_counter, 'Post' %></h2>
+    </div>
+  </li>
+<% else %>
+  <li class="user_home">
+    <%= gravatar_for user %>
+    <div class="content">
+      <%= user.name %>
+      <h2 class="post-counter"> <%= pluralize user.posts_counter, 'Post' %></h2>
+    </div>
+  </li>
+<%end%>

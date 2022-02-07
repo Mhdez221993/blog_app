@@ -1,7 +1,9 @@
 <ul>
   <% posts.each do |post| %>
     <li class="user_posts">
-      <%= link_to post.title, user_post_path(post) %>
+      <h2 class="text">
+        <%= link_to post.title, user_post_path(post) %>
+      </h2>
       <br>
       <p><%= post.text %></p>
       <h3>

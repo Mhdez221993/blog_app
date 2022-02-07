@@ -1,7 +1,9 @@
 <div class="user_show">
-  <%= render @user %>
-  <h2  class="text-left"><span>Bio</span><br/>
-    <%= @user.bio %>
-  </h2>
-  <%= render 'post', posts: @user.posts %>
+  <%= render @user, fron_user_index: false %>
+  <h2  class="text-left">Bio</h2>
+  <p class="bio"><%= @user.bio %></p>
+  <%= render 'post', posts: @posts %>
+</div>
+<div class="text-center">
+  <%= link_to 'All Posts', user_posts_path(@user), class: "btn btn-primary" %>
 </div>

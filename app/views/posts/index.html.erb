@@ -1,5 +1,5 @@
 <div>
-  <%= render 'users/user', user: current_user %>
+  <%= render 'users/user', user: current_user, fron_user_index: true %>
   <ul>
     <% @posts.includes(:user).each do |post| %>
       <%= render 'post', post: post %>
