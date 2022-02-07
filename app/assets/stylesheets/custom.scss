@@ -1,17 +1,39 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/** common **/
+/* mixins, variables, etc. */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* universal */
+
 body {
-  padding-top: 100px;
-  padding-bottom: 40px;
+  padding-top: 60px;
 }
 
 ul,
 li {
-  padding: 0;
   list-style: none;
+  padding: 0;
 }
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* typography */
 
 h1,
 h2,
@@ -24,20 +46,14 @@ h6 {
 
 h1 {
   font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  // text-align: center;
 }
 
 h2 {
   font-size: 1.5em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
   font-weight: normal;
-}
-
-h3 {
-  font-size: 1.2em;
-  text-align: right;
-  font-weight: normal;
+  color: rgb(216, 211, 211);
 }
 
 p {
@@ -45,65 +61,160 @@ p {
   line-height: 1.7em;
 }
 
-img {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 
-/** Home **/
-.user_home {
+/* User */
+
+.users {
   display: flex;
-  // align-items: center;
-  margin-bottom: 20px;
-  border: 1px solid rgb(231, 229, 229);
-  padding: 20px;
+  flex-direction: column;
 }
 
-.picture {
-  width: 100px;
-  height: 100px;
+.user_home {
+  margin-bottom: 30px;
 }
 
-.content {
-  flex: 1 auto;
-  padding: 25px 0 0 30px;
+.user_show {
+  margin-bottom: 80px;
 }
-
-/** User  posts **/
 
 .bio {
-  margin-bottom: 40px;
+  padding-bottom: 50px;
 }
 
 .user_posts {
-  border: 1px solid rgb(230, 229, 229);
-  padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 
-.see_all_post {
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #555;
+
+  a {
+    &:hover {
+      color: rgb(150, 146, 146);
+    }
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0;
+    }
+  }
+}
+
+.center {
   text-align: center;
+
+  h1 {
+    margin-bottom: 10px;
+  }
 }
 
-.btn_show_post {
-  padding: 10px;
+.gravatar {
+  float: left;
+  margin-right: 10px;
 }
 
-/** Comments index **/
-
-.comments_index {
-  padding: 10px 0 50px 0;
+.gravatar_edit {
+  margin-top: 15px;
 }
 
-/** Common show **/
-.post_show_title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* forms */
+
+input,
+textarea,
+select,
+.uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-/** new post page **/
-.new_post {
-  float: right;
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.logout {
+  background-color: transparent;
+  border: none;
+  color: #555;
+  padding: 15px 12px;
+}
+
+.alert {
+  background-color: rgb(238, 134, 134);
+}
+
+.post-counter {
+  text-align: right;
 }

@@ -1,12 +1,12 @@
 <div>
-  <%= render 'users/user', user: @posts.first.user %>
+  <%= render 'users/user', user: current_user, fron_user_index: true %>
   <ul>
     <% @posts.includes(:user).each do |post| %>
-      <%= render 'post', post: post %>
-      <%= render 'comment', comments: post.comments %>
+      <%= render 'post', post: post, post_index: true %>
+      <%= render 'comment', comments: post.recent_comments %>
     <% end %>
   </ul>
-  <div class="see_all_post">
-    <button type="button" class="btn btn-secondary"><%= link_to "Pagination", user_post_path(id: @posts.first.id)%></button>
-  </div>
+</div>
+<div class="see_all_post text-center pagination-link">
+  <%== pagy_nav(@pagy) %>
 </div>
