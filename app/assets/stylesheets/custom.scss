@@ -53,20 +53,12 @@ h2 {
   letter-spacing: -1px;
   margin-bottom: 30px;
   font-weight: normal;
-  color: $gray-light;
+  color: rgb(216, 211, 211);
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
-}
-
-.center {
-  text-align: center;
-
-  h1 {
-    margin-bottom: 10px;
-  }
 }
 
 /* header */
@@ -116,11 +108,11 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: $gray-light;
+  color: #555;
 
   a {
     &:hover {
-      color: $gray-darker;
+      color: rgb(150, 146, 146);
     }
   }
 
@@ -171,6 +163,14 @@ aside {
   }
 }
 
+.center {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
 .gravatar {
   float: left;
   margin-right: 10px;
@@ -207,7 +207,7 @@ input {
 .logout {
   background-color: transparent;
   border: none;
-  color: $gray-light;
+  color: #555;
   padding: 15px 12px;
 }
 
