@@ -3,6 +3,10 @@
     <div class="comment_spacer">
       <span>Name: <%= comment.user.name %></span>
       <span>Comment: <%= comment.text %></span>
+      <% if can? :destroy , comment %>
+        <%= button_to "Destroy", post_comment_path(post_id: comment.post, id: comment),
+        method: :delete, class: "btn btn-danger" %>
+      <% end %>
     </div>
     <br>
   <%end%>
