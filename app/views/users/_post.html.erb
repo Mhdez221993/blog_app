@@ -1,0 +1,15 @@
+<ul>
+  <% posts.each do |post| %>
+    <li class="user_posts">
+      <h2 class="text">
+        <%= link_to post.title, user_post_path(post) %>
+      </h2>
+      <br>
+      <p><%= post.text %></p>
+      <h3>
+        comments <%= post.comments_counter %>,
+        Likes <%= post.likes_counter %>
+      </h3>
+    </li>
+  <%end%>
+</ul>

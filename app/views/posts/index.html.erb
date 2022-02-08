@@ -1,0 +1,12 @@
+<div>
+  <%= render 'users/user', user: @user, fron_user_index: true %>
+  <ul>
+    <% @posts.includes(:user).each do |post| %>
+      <%= render 'post', post: post, post_index: true %>
+      <%= render 'comment', comments: post.recent_comments %>
+    <% end %>
+  </ul>
+</div>
+<div class="text-center add-pagination">
+  <%== pagy_bootstrap_nav(@pagy).html_safe %>
+</div>
