@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
-  include Pagy::Backend
-
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  protect_from_forgery prepend: true
   before_action :authenticate_user!
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  include Pagy::Backend
 
   protected
 
