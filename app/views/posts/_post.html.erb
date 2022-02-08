@@ -21,7 +21,7 @@
       </h2>
       <h3>
         <%= pluralize post.comments_counter, 'Comment' %>,
-        <%= pluralize post.likes_counter, 'Like' %>
+        <%= link_to pluralize(post.likes_counter, 'Like'), likes_create_path(post_id: post, user_id: post.user) %>
       </h3>
     </div>
     <br>
