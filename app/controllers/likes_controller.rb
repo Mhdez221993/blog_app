@@ -4,10 +4,10 @@ class LikesController < ApplicationController
   end
 
   def create
-    post = Post.find(params[:format])
-    like = post.likes.new(user_id: current_user.id)
-
-    flash[:alert] = 'Failed to add a like' unless like.save
-    redirect_to user_post_path(post.user, post)
+    post = Post.find(params[:post_id])
+    user = User.find(params[:user_id])
+    like = post.likes.new(user_id: user.id)
+    like.save
+    redirect_to user_post_path(user, post)
   end
 end
