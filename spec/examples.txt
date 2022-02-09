@@ -1,3 +1,4 @@
-example_id                                     | status | run_time     |
----------------------------------------------- | ------ | ------------ |
-./spec/views/devise/session/new_spec.rb[1:1:1] | passed | 5.35 seconds |
+example_id                                     | status | run_time        |
+---------------------------------------------- | ------ | --------------- |
+./spec/views/devise/session/new_spec.rb[1:1:1] | failed | 0.00899 seconds |
+./spec/views/devise/session/new_spec.rb[1:1:2] | failed | 0.03156 seconds |
