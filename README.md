@@ -34,7 +34,7 @@ To run the tests locally :
 
 * [Could not find gem](https://stackoverflow.com/questions/32491201/could-not-find-gem-pg-0-12-4-ruby-in-any-of-the-gem-sources-listed-in-your)
 * [Install psql](https://harshityadav95.medium.com/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3)
-* [PG:: InsufficientPrivilege: ERROR: must be owner of database blog_app_development](https://stackoverflow.com/questions/25610753/activerecordstatementinvalid-pgerror-error-must-be-owner-of-database)
+* [PG:: InsufficientPrivilege: ERROR: must be owner of database blog_app_development](https://stackoverflow.com/questions/38271376/rails-pginsufficientprivilege-error-permission-denied-for-relation-schema-m)
 * [bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 * [Set up ruby, rils, node, postgresql](https://linoxide.com/how-to-install-ruby-on-rails-on-ubuntu-20-04/#:~:text=Rails%20can%20be%20installed%20using%20the%20gem%20install, Rails%20on%20ubuntu%2020.04.%20%24%20gem%20install%20rails)
 
