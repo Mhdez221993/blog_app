@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Pos show page', type: :feature do
+RSpec.describe 'Post show page', type: :feature do
   before(:each) do
     @user = User.create! name: 'Doe', email: 'doe@gmail.com', password: '1233456', confirmed_at: Time.now
     @user2 = User.create! name: 'JJ', email: 'JJ@gmail.com', password: '1233456', confirmed_at: Time.now
