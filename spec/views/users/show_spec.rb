@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "User show page", type: :feature do
   before(:each) do
-    User.create! name: 'Doe', bio: 'Full-Stack Web Dev', email: 'doe@gmail.com', password: '1234567', confirmed_at: Time.now
+    @user = User.create! name: 'Doe', bio: 'Full-Stack Web Dev', email: 'doe@gmail.com', password: '1234567', confirmed_at: Time.now
     user = User.last
     user.posts.create! title: 'Loren1', text: 'Lorem Ipsum ament'
     user.posts.create! title: 'Loren2', text: 'Lorem Ipsum ament'
@@ -42,5 +42,14 @@ RSpec.describe "User show page", type: :feature do
 
   it "I can see a button that lets me view all of a user's posts." do
     expect(page).to have_link('All Posts')
+    click_on 'All Post'
+    expect(current_path).to eq user_posts_path(@user)
+  end
+
+  it "When I click a user's post, it redirects me to that post's show page." do
+    expect(page).to have_content('Loren1')
+    click_on 'Loren1'
+    post = Post.find_by_title('Loren1')
+    expect(current_path).to eq user_post_path(@user, post)
   end
 end
