@@ -24,7 +24,7 @@ RSpec.describe "User show page", type: :feature do
   end
 
   it "I can see the number of posts the user has written." do
-    number = User.last.posts_counter
+    number = User.find_by_name('Doe').posts_counter
     expect(page).to have_content("#{number} Post")
   end
 
@@ -38,5 +38,9 @@ RSpec.describe "User show page", type: :feature do
     expect(page).to have_content('Loren2')
     expect(page).to have_content('Loren3')
     expect(page).to have_no_content('Loren4')
+  end
+
+  it "I can see a button that lets me view all of a user's posts." do
+    expect(page).to have_link('All Posts')
   end
 end
