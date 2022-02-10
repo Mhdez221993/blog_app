@@ -17,4 +17,8 @@ RSpec.describe "Pos show page", type: :feature do
   it "I can see the post's title." do
     expect(page).to have_content('Loren1')
   end
+
+  it "I can see who wrote the post." do
+    expect(page).to have_content('Doe')
+  end
 end
