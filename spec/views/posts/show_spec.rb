@@ -40,4 +40,9 @@ RSpec.describe "Pos show page", type: :feature do
     expect(page).to have_content('Doe')
     expect(page).to have_content('JJ')
   end
+
+  it "I can see the comment each commentor left." do
+    expect(page).to have_content('Consectetur adipiscing elit')
+    expect(page).to have_content('adipiscing elit')
+  end
 end
