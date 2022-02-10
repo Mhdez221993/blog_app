@@ -42,8 +42,6 @@ RSpec.describe "User show page", type: :feature do
 
   it "I can see a button that lets me view all of a user's posts." do
     expect(page).to have_link('All Posts')
-    click_on 'All Post'
-    expect(current_path).to eq user_posts_path(@user)
   end
 
   it "When I click a user's post, it redirects me to that post's show page." do
@@ -51,5 +49,10 @@ RSpec.describe "User show page", type: :feature do
     click_on 'Loren1'
     post = Post.find_by_title('Loren1')
     expect(current_path).to eq user_post_path(@user, post)
+  end
+
+  it "When I click to see all posts, it redirects me to the user's post's index page." do
+    click_on 'All Post'
+    expect(current_path).to eq user_posts_path(@user)
   end
 end
