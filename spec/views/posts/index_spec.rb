@@ -23,4 +23,9 @@ RSpec.describe "Post index page", type: :feature do
   it "I can see the number of posts the user has written." do
     expect(page).to have_content('2 Post')
   end
+
+  it "I can see a post's title." do
+    expect(page).to have_content('Loren1')
+    expect(page).to have_content('Loren2')
+  end
 end

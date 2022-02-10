@@ -4,9 +4,10 @@ example_id                                   | status | run_time        |
 ./spec/views/devise/session/new_spec.rb[1:2] | passed | 0.13885 seconds |
 ./spec/views/devise/session/new_spec.rb[1:3] | passed | 0.04883 seconds |
 ./spec/views/devise/session/new_spec.rb[1:4] | passed | 0.36181 seconds |
-./spec/views/posts/index_spec.rb[1:1]        | passed | 0.06935 seconds |
-./spec/views/posts/index_spec.rb[1:2]        | passed | 0.06826 seconds |
-./spec/views/posts/index_spec.rb[1:3]        | passed | 0.53794 seconds |
+./spec/views/posts/index_spec.rb[1:1]        | passed | 0.41706 seconds |
+./spec/views/posts/index_spec.rb[1:2]        | passed | 0.1085 seconds  |
+./spec/views/posts/index_spec.rb[1:3]        | passed | 0.07102 seconds |
+./spec/views/posts/index_spec.rb[1:4]        | passed | 0.08189 seconds |
 ./spec/views/users/index_spec.rb[1:1]        | passed | 0.42166 seconds |
 ./spec/views/users/index_spec.rb[1:2]        | passed | 0.05821 seconds |
 ./spec/views/users/index_spec.rb[1:3]        | passed | 0.1435 seconds  |
