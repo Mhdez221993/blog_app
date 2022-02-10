@@ -3,7 +3,7 @@
   <ul>
     <% @posts.includes(:user).each do |post| %>
       <%= render 'post', post: post, post_index: true %>
-      <%= render '/comments/comment', comments: post.comments, post_show: false %>
+      <%= render '/comments/comment', comments: post.recent_comments, post_show: false %>
     <% end %>
   </ul>
 </div>
