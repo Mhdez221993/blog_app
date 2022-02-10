@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "User show page", type: :feature do
+RSpec.describe 'User show page', type: :feature do
   before(:each) do
-    @user = User.create! name: 'Doe', bio: 'Full-Stack Web Dev', email: 'doe@gmail.com', password: '1234567', confirmed_at: Time.now
+    @user = User.create!(name: 'Doe', bio: 'Full-Stack Web Dev',
+                         email: 'doe@gmail.com', password: '1234567', confirmed_at: Time.now)
     user = User.last
     user.posts.create! title: 'Loren1', text: 'Lorem Ipsum ament'
     user.posts.create! title: 'Loren2', text: 'Lorem Ipsum ament'
@@ -23,7 +24,7 @@ RSpec.describe "User show page", type: :feature do
     expect(page).to have_content('Doe')
   end
 
-  it "I can see the number of posts the user has written." do
+  it 'I can see the number of posts the user has written.' do
     number = User.find_by_name('Doe').posts_counter
     expect(page).to have_content("#{number} Post")
   end

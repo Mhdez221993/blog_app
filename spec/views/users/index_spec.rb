@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'User index page', type: :feature do
   before(:each) do
-    User.create! name: 'Hdez', bio: 'Full-Stack Web Dev', email: 'hdez@gmail.com', password: '1234567', confirmed_at: Time.now
-    User.create! name: 'Doe', bio: 'Sofware Engineer', email: 'doe@gmail.com', password: '1234567', confirmed_at: Time.now
+    User.create!(name: 'Hdez', bio: 'Full-Stack Web Dev',
+                 email: 'hdez@gmail.com', password: '1234567', confirmed_at: Time.now)
+    User.create!(name: 'Doe', bio: 'Sofware Engineer',
+                 email: 'doe@gmail.com', password: '1234567', confirmed_at: Time.now)
     subject = User.first
     subject.posts.create! title: 'Lord', text: 'The lord of the ring'
     subject.posts.create! title: 'Lord', text: 'The lord of the ring'
