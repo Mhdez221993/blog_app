@@ -25,4 +25,8 @@ RSpec.describe "Pos show page", type: :feature do
   it "I can see how many comments it has." do
     expect(page).to have_content('1 Comment')
   end
+
+  it "I can see how many likes it has." do
+    expect(page).to have_content('1 Like')
+  end
 end
