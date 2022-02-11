@@ -1,5 +1,8 @@
-class ApplicationController < ActionController::Base
-  protect_from_forgery prepend: true
+class ApplicationController < ActionController::API
+  include ActionController::MimeResponds
+  include RackSessionFixController
+  include ActionController::RequestForgeryProtection
+  protect_from_forgery with: :exception, unless: -> { request.format.json? }
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   include Pagy::Backend

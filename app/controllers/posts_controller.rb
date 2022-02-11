@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find_by(id: params[:user_id])
-    @pagy, @posts = pagy(@user.posts, items: 3)
+    @posts = Post.all
+    render json: @posts
   end
 
   def show
     @post = Post.find(params[:id])
+    render json: @post
   end
 
   def new
@@ -15,20 +16,18 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to user_post_path(@post.user.id, @post.id)
+      render json: { message: 'Post created successfully' }
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
-    user = User.find(params[:user_id])
     post = Post.find(params[:id])
     if post.destroy!
-      flash[:notice] = 'Post was successfully destroyed'
-      redirect_to user_posts_path(user)
+      render json: { message: 'Post destroyed successfully' }
     else
-      redirect_to user_post_path(user, post)
+      render json: { message: 'Post no found' }
     end
   end
 
