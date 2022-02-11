@@ -45,6 +45,8 @@ To run the tests locally :
 - [capybara-cheetsheet](https://devhints.io/capybara)
 - [A Devise-JWT Tutorial For Authenticating Users](https://medium.com/ruby-daily/a-devise-jwt-tutorial-for-authenticating-users-in-ruby-on-rails-ca214898318e)
 
+* [Couldn't decrypt config/credentials.yml.enc. Perhaps you passed the wrong key?](https://stackoverflow.com/questions/63348058/couldnt-decrypt-config-credentials-yml-enc-perhaps-you-passed-the-wrong-key)
+
 ## Authors
 
 👤 **Moises Hernandez Coronado**
