@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to user_post_path(@post.user.id, @post.id)
+      render json: { message: 'Post created successfully' }
     else
       render :new, status: :unprocessable_entity
     end
