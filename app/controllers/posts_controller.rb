@@ -24,13 +24,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:user_id])
     post = Post.find(params[:id])
     if post.destroy!
-      flash[:notice] = 'Post was successfully destroyed'
-      redirect_to user_posts_path(user)
+      render json: { message: 'Post destroyed successfully' }
     else
-      redirect_to user_post_path(user, post)
+      render json: { message: 'Post no found' }
     end
   end
 
