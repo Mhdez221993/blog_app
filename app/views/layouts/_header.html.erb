@@ -7,7 +7,8 @@
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "New post", new_post_path %></li>
           <li><%= link_to "All posts", user_posts_path(current_user) %></li>
-          <li><%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "logout"%></li>
+          <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "logout"%></li>
+          <li><%= link_to "Reset password", edit_user_registration_path, class: "reset-password"%></li>
         <%end%>
       </ul>
     </nav>

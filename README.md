@@ -34,12 +34,18 @@ To run the tests locally :
 
 - [Could not find gem](https://stackoverflow.com/questions/32491201/could-not-find-gem-pg-0-12-4-ruby-in-any-of-the-gem-sources-listed-in-your)
 - [Install psql](https://harshityadav95.medium.com/postgresql-in-windows-subsystem-for-linux-wsl-6dc751ac1ff3)
-- [PG:: InsufficientPrivilege: ERROR: must be owner of database blog_app_development](https://stackoverflow.com/questions/25610753/activerecordstatementinvalid-pgerror-error-must-be-owner-of-database)
+- [PG:: InsufficientPrivilege: ERROR: must be owner of database blog_app_development](https://stackoverflow.com/questions/38271376/rails-pginsufficientprivilege-error-permission-denied-for-relation-schema-m)
+- [Gran all privilage to a super user](https://stackoverflow.com/questions/28116927/rails-postgres-permission-denied-to-create-database-on-rake-dbcreateall)
 - [bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
-- [Set up ruby, rils, node, postgresql](https://linoxide.com/how-to-install-ruby-on-rails-on-ubuntu-20-04/#:~:text=Rails%20can%20be%20installed%20using%20the%20gem%20install,Rails%20on%20ubuntu%2020.04.%20%24%20gem%20install%20rails)
+- [Set up ruby, rils, node, postgresql](https://linoxide.com/how-to-install-ruby-on-rails-on-ubuntu-20-04/#:~:text=Rails%20can%20be%20installed%20using%20the%20gem%20install, Rails%20on%20ubuntu%2020.04.%20%24%20gem%20install%20rails)
 
-* [Revertin a commit](https://www.w3docs.com/snippets/git/how-to-revert-a-git-repository-to-a-previous-commit.html)
-* [Why Bundle Install is installing gems in vendor/bundle?](https://stackoverflow.com/questions/19961821/why-bundle-install-is-installing-gems-in-vendor-bundle)
+- [Revertin a commit](https://www.w3docs.com/snippets/git/how-to-revert-a-git-repository-to-a-previous-commit.html)
+- [Why Bundle Install is installing gems in vendor/bundle?](https://stackoverflow.com/questions/19961821/why-bundle-install-is-installing-gems-in-vendor-bundle)
+- [rspec machers cheetsheet](https://gist.github.com/mlr/6574be720a88800b7883#file-rspec_rails_cheetsheet-rb-L58)
+- [capybara-cheetsheet](https://devhints.io/capybara)
+- [A Devise-JWT Tutorial For Authenticating Users](https://medium.com/ruby-daily/a-devise-jwt-tutorial-for-authenticating-users-in-ruby-on-rails-ca214898318e)
+
+* [Couldn't decrypt config/credentials.yml.enc. Perhaps you passed the wrong key?](https://stackoverflow.com/questions/63348058/couldnt-decrypt-config-credentials-yml-enc-perhaps-you-passed-the-wrong-key)
 
 ## Authors
 

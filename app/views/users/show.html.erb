@@ -2,7 +2,7 @@
   <%= render @user, fron_user_index: false %>
   <h2  class="text-left">Bio</h2>
   <p class="bio"><%= @user.bio %></p>
-  <%= render 'post', posts: @posts %>
+  <%= render 'post', posts: @posts.includes(:user) %>
 </div>
 <div class="text-center">
   <%= link_to 'All Posts', user_posts_path(@user), class: "btn btn-primary" %>

@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find_by(id: params[:user_id])
-    @pagy, @posts = pagy(@user.posts, items: 2)
+    @posts = Post.all
+    render json: @posts
   end
 
   def show
     @post = Post.find(params[:id])
+    render json: @post
   end
 
   def new
@@ -14,12 +15,19 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
-    @post.comments_counter = 0
-    @post.likes_counter = 0
     if @post.save
-      redirect_to user_post_path(@post.user.id, @post.id)
+      render json: { message: 'Post created successfully' }
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    if post.destroy!
+      render json: { message: 'Post destroyed successfully' }
+    else
+      render json: { message: 'Post no found' }
     end
   end
 
