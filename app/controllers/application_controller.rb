@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name bio])
   end
 end
