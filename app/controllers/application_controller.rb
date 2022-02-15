@@ -1,15 +1,7 @@
-class ApplicationController < ActionController::API
-  include ActionController::MimeResponds
-  include RackSessionFixController
-  include ActionController::RequestForgeryProtection
-  protect_from_forgery with: :exception, unless: -> { request.format.json? }
-  before_action :authenticate_user!
-  before_action :configure_permitted_parameters, if: :devise_controller?
+class ApplicationController < ActionController::Base
   include Pagy::Backend
 
-  protected
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name bio])
+  def current_user
+    User.first
   end
 end
