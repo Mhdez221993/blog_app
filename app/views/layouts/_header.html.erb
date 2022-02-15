@@ -6,6 +6,7 @@
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "New post", new_post_path %></li>
           <li><%= link_to "Sign Out", destroy_user_session_path(current_user) %></li>
+          <li><%= link_to "Reset Password", edit_user_registration_path(current_user) %></li>
       </ul>
     </nav>
   </div>
