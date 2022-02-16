@@ -40,4 +40,10 @@ RSpec.describe 'user index page', type: :feature do
   it "I can see a button that lets me view all of a user's posts" do
     expect(page).to have_content 'All Posts'
   end
+
+  it "When I click a user's post, it redirects me to that post's show page" do
+    post = Post.find_by_title 'Lorem ipsum1'
+    click_on 'Lorem ipsum1'
+    expect(current_path).to eq user_post_path(@user, post)
+  end
 end
