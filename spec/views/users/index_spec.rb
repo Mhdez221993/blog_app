@@ -14,4 +14,8 @@ RSpec.describe 'user index page', type: :feature do
     expect(page).to have_content 'user1'
     expect(page).to have_content 'user2'
   end
+
+  it 'I can see the profile picture for each user' do
+    expect(page).to have_css 'img', count: 2
+  end
 end
