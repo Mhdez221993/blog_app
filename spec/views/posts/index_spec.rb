@@ -6,6 +6,8 @@ RSpec.describe 'user index page', type: :feature do
                          email: 'user1@example.com',
                          password: 'password', confirmed_at: Time.now
     (1..4).each { |i| @user.posts.create! title: "Lorem ipsum#{i}", text: 'Lorem ipsum dolor sit amet' }
+    post = Post.first
+    (1..4).each { post.comments.create! text: 'Sit amet Lorem ipsum dolor', user_id: @user.id }
     visit user_session_path
     fill_in 'Email', with: 'user1@example.com'
     fill_in 'Password', with: 'password'
@@ -36,6 +38,7 @@ RSpec.describe 'user index page', type: :feature do
   end
 
   it 'I can see the first comments on a post' do
+    expect(page).to have_content 'Sit amet Lorem ipsum...'
   end
 
   it 'I can see how many comments a post has' do
