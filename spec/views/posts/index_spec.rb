@@ -22,6 +22,7 @@ RSpec.describe 'user index page', type: :feature do
   end
 
   it 'I can see the number of posts the user has written' do
+    expect(page).to have_content '4 Posts'
   end
 
   it "I can see a post's title" do
