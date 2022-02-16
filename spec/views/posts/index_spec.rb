@@ -32,6 +32,7 @@ RSpec.describe 'user index page', type: :feature do
   end
 
   it "I can see some of the post's body" do
+    expect(page).to have_content 'Lorem ipsum dolor si...'
   end
 
   it 'I can see the first comments on a post' do
