@@ -36,4 +36,8 @@ RSpec.describe 'user index page', type: :feature do
     expect(page).to have_content 'Lorem ipsum3'
     expect(page).to have_no_content 'Lorem ipsum4'
   end
+
+  it "I can see a button that lets me view all of a user's posts" do
+    expect(page).to have_content 'All Posts'
+  end
 end
