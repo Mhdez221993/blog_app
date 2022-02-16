@@ -1,6 +1,6 @@
 <div class="post_show">
   <%= render 'post', post: @post, post_index: false %>
-  <%= render '/comments/comment', comments: @post.comments.includes(:user, :post), post_show: true %>
+  <%= render '/comments/comment', comments: @post.comments.includes(:user), post_show: true %>
   <h2>Add a comment:</h2>
   <%= form_with model: [ @post, @post.comments.build ] do |form| %>
     <p>

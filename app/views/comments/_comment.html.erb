@@ -1,6 +1,6 @@
 <%if post_show %>
   <li class="comments_index">
-    <%comments.includes(:user).each do |comment| %>
+    <%comments.includes(:post).each do |comment| %>
       <div class="comment_spacer">
         <span>Name: <%= comment.user.name %></span>
         <span>Comment: <%= comment.text %></span>
