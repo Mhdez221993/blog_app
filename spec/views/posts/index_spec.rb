@@ -26,6 +26,9 @@ RSpec.describe 'user index page', type: :feature do
   end
 
   it "I can see a post's title" do
+    expect(page).to have_content 'Lorem ipsum1'
+    expect(page).to have_content 'Lorem ipsum2'
+    expect(page).to have_content 'Lorem ipsum3'
   end
 
   it "I can see some of the post's body" do
