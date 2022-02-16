@@ -57,5 +57,8 @@ RSpec.describe 'user index page', type: :feature do
   end
 
   it "When I click on a post, it redirects me to that post's show page" do
+    post = Post.find_by_title 'Lorem ipsum3'
+    click_on 'Lorem ipsum3'
+    expect(current_path).to eq user_post_path(@user, post)
   end
 end
