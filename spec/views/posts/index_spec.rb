@@ -8,6 +8,7 @@ RSpec.describe 'user index page', type: :feature do
     (1..4).each { |i| @user.posts.create! title: "Lorem ipsum#{i}", text: 'Lorem ipsum dolor sit amet' }
     post = Post.first
     (1..4).each { post.comments.create! text: 'Sit amet Lorem ipsum dolor', user_id: @user.id }
+    (1..10).each { post.likes.create! user_id: @user.id }
     visit user_session_path
     fill_in 'Email', with: 'user1@example.com'
     fill_in 'Password', with: 'password'
@@ -47,6 +48,8 @@ RSpec.describe 'user index page', type: :feature do
   end
 
   it 'I can see how many likes a post has' do
+    expect(page).to have_content '10 Likes'
+    expect(page).to have_content '0 Likes'
   end
 
   it 'I can see a section for pagination if there are more posts than fit on the view' do
