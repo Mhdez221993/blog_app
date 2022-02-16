@@ -1,6 +1,7 @@
 example_id                                   | status | run_time        |
 -------------------------------------------- | ------ | --------------- |
-./spec/views/devise/session/new_spec.rb[1:1] | passed | 0.32295 seconds |
+./spec/views/devise/session/new_spec.rb[1:1] | passed | 0.55864 seconds |
+./spec/views/devise/session/new_spec.rb[1:2] | passed | 0.08851 seconds |
 ./spec/views/posts/index_spec.rb[1:1]        | passed | 0.0798 seconds  |
 ./spec/views/posts/index_spec.rb[1:2]        | passed | 0.07894 seconds |
 ./spec/views/posts/index_spec.rb[1:3]        | passed | 0.07948 seconds |
