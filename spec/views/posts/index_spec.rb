@@ -16,4 +16,32 @@ RSpec.describe 'user index page', type: :feature do
   it "I can see the user's profile picture" do
     expect(page).to have_css 'img', count: 1
   end
+
+  it "I can see the user's username" do
+    expect(page).to have_content 'user1'
+  end
+
+  it 'I can see the number of posts the user has written' do
+  end
+
+  it "I can see a post's title" do
+  end
+
+  it "I can see some of the post's body" do
+  end
+
+  it 'I can see the first comments on a post' do
+  end
+
+  it 'I can see how many comments a post has' do
+  end
+
+  it 'I can see how many likes a post has' do
+  end
+
+  it 'I can see a section for pagination if there are more posts than fit on the view' do
+  end
+
+  it "When I click on a post, it redirects me to that post's show page" do
+  end
 end
