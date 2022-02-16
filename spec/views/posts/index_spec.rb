@@ -42,6 +42,8 @@ RSpec.describe 'user index page', type: :feature do
   end
 
   it 'I can see how many comments a post has' do
+    expect(page).to have_content '0 Comments'
+    expect(page).to have_content '4 Comments'
   end
 
   it 'I can see how many likes a post has' do
