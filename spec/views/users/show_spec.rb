@@ -46,4 +46,9 @@ RSpec.describe 'user index page', type: :feature do
     click_on 'Lorem ipsum1'
     expect(current_path).to eq user_post_path(@user, post)
   end
+
+  it "When I click to see all posts, it redirects me to the user's post's index page" do
+    click_on 'All Posts'
+    expect(current_path).to eq user_posts_path(@user)
+  end
 end
