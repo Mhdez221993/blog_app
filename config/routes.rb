@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users,
-             controllers: {
-                 sessions: 'users/sessions',
-                 registrations: 'users/registrations'
-             }
-  get '/member-data', to: 'members#show'
-
+  devise_for :users
   root 'users#index'
 
   resources :users, only: %i[index show] do
