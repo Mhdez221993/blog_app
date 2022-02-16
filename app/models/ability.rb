@@ -6,11 +6,12 @@ class Ability
 
     return unless user.present?
 
+    can :read, :all
     can :manage, Post, user: user
     can :manage, Comment, user: user
 
     return unless user.admin?
 
-    can :manage, all
+    can :manage, :all
   end
 end

@@ -8,10 +8,15 @@ class Post < ApplicationRecord
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  after_save :posts_counter
+  after_save :posts_increment
+  after_destroy :posts_decrement
 
-  def posts_counter
+  def posts_increment
     user.increment!(:posts_counter)
+  end
+
+  def posts_decrement
+    user.decrement!(:posts_counter)
   end
 
   def recent_comments
