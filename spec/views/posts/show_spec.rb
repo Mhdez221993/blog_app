@@ -7,8 +7,10 @@ RSpec.describe 'Post show page', type: :feature do
     @user2 = User.create! name: 'user2', email: 'user2@example.com',
                           password: 'password', confirmed_at: Time.now
     @post = @user.posts.create! title: 'Lorem ipsum', text: 'Lorem ipsum dolor sit amet'
-    (1..4).each { @post.comments.create! text: 'Sit amet Lorem ipsum dolor', user_id: @user.id }
-    (1..4).each { @post.comments.create! text: 'Sit amet Lorem ipsum dolor', user_id: @user2.id }
+    (1..4).each do
+      @post.comments.create! text: 'Sit amet Lorem ipsum dolor', user_id: @user.id
+      @post.comments.create! text: 'Sit amet Lorem ipsum dolor', user_id: @user2.id
+    end
     (1..10).each { @post.likes.create! user_id: @user.id }
     visit user_session_path
     fill_in 'Email', with: 'user1@example.com'
