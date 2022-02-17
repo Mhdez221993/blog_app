@@ -18,4 +18,8 @@ RSpec.describe 'user index page', type: :feature do
   it "I can see the post's title" do
     expect(page).to have_content 'Lorem ipsum'
   end
+
+  it 'I can see who wrote the post' do
+    expect(page).to have_content 'Lorem ipsum by user1'
+  end
 end
