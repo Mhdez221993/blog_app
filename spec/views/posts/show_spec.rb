@@ -38,6 +38,11 @@ RSpec.describe 'user index page', type: :feature do
   end
 
   it 'I can see the username of each commentor' do
+    expect(page).to have_content 'Name: user1 Comment'
+    expect(page).to have_content 'Name: user2 Comment'
+  end
+
+  it 'I can see the comment each commentor left' do
     expect(page).to have_content 'Name: user1 Comment: Sit amet Lorem ipsum dolor'
     expect(page).to have_content 'Name: user2 Comment: Sit amet Lorem ipsum dolor'
   end
