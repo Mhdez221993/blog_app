@@ -1,59 +1,54 @@
 require 'rails_helper'
 
-RSpec.describe 'User show page', type: :feature do
+RSpec.describe 'user show page', type: :feature do
   before(:each) do
-    @user = User.create!(name: 'Doe', bio: 'Full-Stack Web Dev',
-                         email: 'doe@gmail.com', password: '1234567', confirmed_at: Time.now)
-    user = User.last
-    user.posts.create! title: 'Loren1', text: 'Lorem Ipsum ament'
-    user.posts.create! title: 'Loren2', text: 'Lorem Ipsum ament'
-    user.posts.create! title: 'Loren3', text: 'Lorem Ipsum ament'
-    user.posts.create! title: 'Loren4', text: 'Lorem Ipsum ament'
+    @user = User.create! name: 'user1', bio: 'My bio',
+                         email: 'user1@example.com',
+                         password: 'password', confirmed_at: Time.now
+    (1..4).each { |i| @user.posts.create! title: "Lorem ipsum#{i}", text: 'Lorem ipsum dolor sit amet' }
     visit user_session_path
-    fill_in 'Email', with: 'doe@gmail.com'
-    fill_in 'Password', with: '1234567'
+    fill_in 'Email', with: 'user1@example.com'
+    fill_in 'Password', with: 'password'
     click_on 'Log in'
-    click_on 'Doe'
+    visit user_path(@user)
   end
 
-  it "I can see the user's profile picture." do
-    expect(page).to have_css('img', count: 1)
+  it "I can see the user's profile picture" do
+    expect(page).to have_css 'img', count: 1
   end
 
-  it "I can see the user's username." do
-    expect(page).to have_content('Doe')
+  it "I can see the user's usernam" do
+    expect(page).to have_content 'user1'
   end
 
-  it 'I can see the number of posts the user has written.' do
-    number = User.find_by_name('Doe').posts_counter
-    expect(page).to have_content("#{number} Post")
+  it 'I can see the number of posts the user has written' do
+    expect(page).to have_content '4 Posts'
   end
 
-  it "I can see the user's bio." do
-    expect(page).to have_content('Bio')
-    expect(page).to have_content('Full-Stack Web Dev')
+  it "I can see the user's bio" do
+    expect(page).to have_content 'Bio'
+    expect(page).to have_content 'My bio'
   end
 
-  it "I can see the user's first 3 posts." do
-    expect(page).to have_content('Loren1')
-    expect(page).to have_content('Loren2')
-    expect(page).to have_content('Loren3')
-    expect(page).to have_no_content('Loren4')
+  it "I can see the user's first 3 posts" do
+    expect(page).to have_content 'Lorem ipsum1'
+    expect(page).to have_content 'Lorem ipsum2'
+    expect(page).to have_content 'Lorem ipsum3'
+    expect(page).to have_no_content 'Lorem ipsum4'
   end
 
-  it "I can see a button that lets me view all of a user's posts." do
-    expect(page).to have_link('All Posts')
+  it "I can see a button that lets me view all of a user's posts" do
+    expect(page).to have_content 'All Posts'
   end
 
-  it "When I click a user's post, it redirects me to that post's show page." do
-    expect(page).to have_content('Loren1')
-    click_on 'Loren1'
-    post = Post.find_by_title('Loren1')
+  it "When I click a user's post, it redirects me to that post's show page" do
+    post = Post.find_by_title 'Lorem ipsum1'
+    click_on 'Lorem ipsum1'
     expect(current_path).to eq user_post_path(@user, post)
   end
 
-  it "When I click to see all posts, it redirects me to the user's post's index page." do
-    click_on 'All Post'
+  it "When I click to see all posts, it redirects me to the user's post's index page" do
+    click_on 'All Posts'
     expect(current_path).to eq user_posts_path(@user)
   end
 end
