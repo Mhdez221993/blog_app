@@ -26,4 +26,12 @@ RSpec.describe 'user index page', type: :feature do
   it 'I can see how many comments it has' do
     expect(page).to have_content '4 Comments'
   end
+
+  it 'I can see how many likes it has' do
+    expect(page).to have_content '10 Likes'
+  end
+
+  it 'I can see the post body' do
+    expect(page).to have_content 'Sit amet Lorem ipsum dolor'
+  end
 end
