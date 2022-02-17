@@ -13,12 +13,11 @@ class CommentsController < ApplicationController
 
   def create
     post = Post.find(params[:post_id])
-    user = post.user
     @comment = post.comments.new(user_id: current_user.id, text: commnet_params[:text])
     if @comment.save
-      redirect_to user_post_path(user, post)
+      render json: 'Comment created successfully'
     else
-      flash[:notice] = 'Unable to create comment'
+      render json: 'Unable to create comment'
     end
   end
 

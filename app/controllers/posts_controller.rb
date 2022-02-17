@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find_by(id: params[:user_id])
-    @pagy, @posts = pagy(@user.posts, items: 3)
+    @posts = Post.all
+    render json: @posts
   end
 
   def show
