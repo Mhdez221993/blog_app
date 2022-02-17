@@ -2,11 +2,13 @@ require 'rails_helper'
 
 RSpec.describe 'user index page', type: :feature do
   before(:each) do
-    @user = User.create! name: 'user1', bio: 'My bio',
-                         email: 'user1@example.com',
+    @user = User.create! name: 'user1', email: 'user1@example.com',
                          password: 'password', confirmed_at: Time.now
+    @user2 = User.create! name: 'user2', email: 'user2@example.com',
+                          password: 'password', confirmed_at: Time.now
     @post = @user.posts.create! title: 'Lorem ipsum', text: 'Lorem ipsum dolor sit amet'
     (1..4).each { @post.comments.create! text: 'Sit amet Lorem ipsum dolor', user_id: @user.id }
+    (1..4).each { @post.comments.create! text: 'Sit amet Lorem ipsum dolor', user_id: @user2.id }
     (1..10).each { @post.likes.create! user_id: @user.id }
     visit user_session_path
     fill_in 'Email', with: 'user1@example.com'
@@ -24,7 +26,7 @@ RSpec.describe 'user index page', type: :feature do
   end
 
   it 'I can see how many comments it has' do
-    expect(page).to have_content '4 Comments'
+    expect(page).to have_content '8 Comments'
   end
 
   it 'I can see how many likes it has' do
@@ -33,5 +35,10 @@ RSpec.describe 'user index page', type: :feature do
 
   it 'I can see the post body' do
     expect(page).to have_content 'Sit amet Lorem ipsum dolor'
+  end
+
+  it 'I can see the username of each commentor' do
+    expect(page).to have_content 'Name: user1 Comment: Sit amet Lorem ipsum dolor'
+    expect(page).to have_content 'Name: user2 Comment: Sit amet Lorem ipsum dolor'
   end
 end
