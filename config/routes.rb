@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'likes/create'
 
   resources :posts, only: %i[new create index] do
-    resources :comments, only: %i[new create destroy index]
+    resources :comments, only: %i[index new create destroy]
     resources :likes, only: %i[new create]
   end
 end
